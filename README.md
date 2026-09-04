@@ -53,81 +53,89 @@ how about you just update the entire overlay code?
 ee8d8fc7-53b2-4bb0-9edd-42ae0b06b202.png
 so much cleaner!
 
-Yep — updated to match the version we just finalized.
+77fd6649-6c87-4085-bc53-afcbb05c1fcc.png
 
-I added the embedded weapon-swap asset, the ` keybind, fixed 44 px icons, current settings, exact JSON row behavior, full package/install/sync workflow, arrow behavior, and some contributor notes so future-you—or a friend—doesn’t have to rediscover all our little landmines. 😂
+4a4d54cb-e97d-4c21-8c18-a90fa7e5baff.png
 
- 
+Today 12:03 PM
+d611ee87-7506-4477-8078-9281bbf1d593.png
 
+Yep — the README’s project tree is now stale. We need to add the PNG assets that are actually part of the project rather than pretending weapon_swap_button.png is our lone survivor. 😂
 
+Since those PNG filenames you pasted look like screenshot/generated filenames rather than necessarily the actual filenames in your assets folder, I don’t want to guess what belongs in the repository documentation.
 
-Is this concise enough that people will be able to follow the instructions?
+In your Cursor PowerShell terminal, run:
 
-Yes, but I think we can make it more beginner-friendly and shorter.
+Get-ChildItem .\assets -Recurse | Select-Object FullName
+Paste that result here.
 
-The current README is good as developer documentation, but it’s slightly over-documented for someone who just wants to clone the repo, build it, and get the overlay working. The biggest issue is that installation instructions and development instructions are mixed together.
-
-I’d restructure it around what the person is actually trying to do:
-
-What is this? — 2–3 sentences + features.
-
-Quick Start — clone/download → build → install → restart Blish.
-
-Customize Your Rotation — explain skills.json and rotation.json, with one small example each.
-
-Rotation Instructions — weapon swap/repeat.
-
-Development — only for people modifying C#.
-
-Command Cheat Sheet — “Changed X? Run Y.”
-
-Technical Notes — embedded asset, 44 px icons, ASCII arrows, etc.
-
-For example, this part:
-
-“The editable rotation data is stored separately from the .bhm module. Changes to rotation.json or skills.json therefore do not require rebuilding or repackaging the module...”
-
-is useful, but we explain essentially the same concept in How Rotation Data Works, Updating Rotation Data, Which Command Do I Need?, and the flow diagrams. That's where it starts feeling longer than necessary.
-
-One thing I'd change beyond conciseness
-The README currently says:
-
-The current weapon-swap key label is `
-
-That's your personal keybind, so I wouldn't bake that into public documentation as though that's how the module works. If we're putting this on Git for friends/other users, weapon swap should eventually be configurable just like skill keybinds.
-
-Likewise, I'd separate:
-
-For users
-
-“Here is how you install and customize Rotation Overlay.”
-
-from:
-
-For contributors
-
-“Here is how the code works and how to build/package it.”
-
-That would make the README much easier to scan.
-
-So: people could follow the current version, absolutely. But I think we can cut ~25–35% of it and actually make it easier to follow. I'd rather give you a polished GitHub-style README where the first screen gets someone from “what is this?” → “how do I run it?” without making them read the architecture first.
+Then I’ll update the README’s Project Structure and any relevant asset instructions to match what is actually in the project.
 
 
-Yes lets do that
+2db16551-7540-4765-a859-792149352487.png
+theres only one - not sure what all the others are referencing
 
-Done. This version is much more “clone it → build it → customize it” and less “here is the complete archaeological history of how Kairo and Kristyn fought Blish HUD.” 😂
+Ahhh — mystery solved. 😂
 
-I kept the important developer notes at the bottom, but the main instructions now focus on what someone actually needs to do.
+Those filenames like:
+
+0c480299-50a4-4654-9b86-f48fedf97d25.png
+e29c2abd-ce8b-43ea-b65d-b7a10e4ee200.png
+39daf404-2105-48af-bb4b-ca33dcef05a7.png
+are not files in your Rotation Overlay project.
+
+They're images/screenshots that were attached during our ChatGPT conversation. When you copied the conversation/history into your message, those attachment references came along with it. They have nothing to do with GitHub or your repo.
+
+Your actual project contains exactly what we expected:
+
+assets/
+└── weapon_swap_button.png
+So our README's project structure is already correct. ✅
+
+One thing we do need to fix
+We just published the older README to GitHub.
+
+Remember, we created the improved concise version afterward as README_CONCISE.md, but we haven't actually replaced:
+
+README.md
+inside your project with it yet.
+
+So that's our next move: replace your current project README.md with the concise version, then you'll get to do your first real GitHub update:
+
+Change README
+      ↓
+GitHub Desktop detects it
+      ↓
+Commit
+      ↓
+Push
+      ↓
+GitHub README updates
+Which is actually perfect timing because it'll teach you the normal workflow you'll use from now on. 😎
 
 
-One thing I deliberately changed: I removed your personal ` weapon-swap keybind from the documentation. The README now describes weapon swap generically, which is much better for GitHub/sharing. 
+okay, give me the readme to replace then please
+
+Absolutely. Here is the replacement README with the concise structure and the now-confirmed project tree showing only the one actual PNG asset.
+
+
+Replace your current file
+Download it, then replace:
+
+C:\Users\k_0_1\.cursor\projects\RotationOverlay\README.md
+with this one. You can rename RotationOverlay_README.md to simply:
+
+README.md
+Then open GitHub Desktop. It should immediately show README.md under Changes.
+
+That'll be a perfect first normal GitHub update: change → review → commit → push. 😎 
 
 
 
 
 Library
 /
-README_CONCISE.md
+RotationOverlay_README.md
 
 
 Rotation Overlay
@@ -154,8 +162,6 @@ Automatic reload when rotation JSON changes
 
 Quick Start
 1. Requirements
-You need:
-
 Windows
 
 Guild Wars 2
@@ -165,10 +171,10 @@ Blish HUD
 .NET SDK capable of building .NET Framework 4.8 projects
 
 2. Build
-Open PowerShell in the project folder and run:
+Open PowerShell in the project folder:
 
 dotnet build -c Release
-The compiled files will be created in:
+The compiled files are created in:
 
 bin\Release\net48\
 3. Set Your Blish HUD Folder
@@ -176,8 +182,6 @@ Set $blishData to your Blish HUD data directory:
 
 $blishData = "C:\Path\To\Your\Guild Wars 2\addons\blishhud"
 4. Package and Install
-Run:
-
 $release = ".\bin\Release\net48"
 
 Remove-Item ".\RotationOverlay.bhm" -ErrorAction Ignore
@@ -195,21 +199,19 @@ Copy-Item `
   ".\RotationOverlay.bhm" `
   "$blishData\modules\RotationOverlay.bhm" `
   -Force
-Restart Blish HUD.
+Restart Blish HUD after replacing the module.
 
 Customize Your Rotation
-Rotation Overlay uses two files:
+Rotation Overlay uses two editable JSON files:
 
 rotations\skills.json
 rotations\rotation.json
-skills.json defines your skills.
+skills.json defines the skills and keybinds.
 
-rotation.json defines the order they appear.
+rotation.json defines the order and layout in which they appear.
 
 Add a Skill
 Each skill has a local ID, name, keybind, and Guild Wars 2 skill ID.
-
-Example:
 
 {
   "19": {
@@ -220,10 +222,10 @@ Example:
     "icon": ""
   }
 }
-Here, 19 is the local ID used in your rotation.
+Here, 19 is the local ID used in rotation.json.
 
 Build a Rotation
-Use those local IDs inside rotation.json:
+Use local skill IDs inside the rotation:
 
 {
   "name": "Example Rotation",
@@ -237,9 +239,7 @@ Use those local IDs inside rotation.json:
     }
   ]
 }
-Each array inside rows becomes one row on screen.
-
-The module keeps the row layout exactly as written in the JSON.
+Each array inside rows becomes one visual row. The module keeps the row layout exactly as written in the JSON.
 
 Rotation Instructions
 Rows can contain special instructions in addition to skill IDs.
@@ -251,7 +251,7 @@ Weapon Swap
 Weapon swap uses the custom icon stored at:
 
 assets\weapon_swap_button.png
-The image is embedded in the module when it is built.
+The image is embedded into the module when it is built.
 
 Repeat
 {
@@ -261,7 +261,7 @@ Repeat
 Test JSON Changes
 Changes to rotation.json and skills.json do not require rebuilding the module.
 
-Copy the updated files to your Blish HUD data folder:
+Copy the updated files to the Blish HUD data folder:
 
 Copy-Item `
   ".\rotations\rotation.json" `
@@ -272,7 +272,7 @@ Copy-Item `
   ".\rotations\skills.json" `
   "$blishData\rotation_overlay\skills.json" `
   -Force
-The module watches these live files and reloads rotation data when they change.
+The module watches the live JSON files and reloads rotation data when they change.
 
 What Do I Run?
 What You Changed	What To Do
@@ -289,11 +289,12 @@ RotationOverlay/
 ├── rotations/
 │   ├── rotation.json
 │   └── skills.json
+├── .gitignore
 ├── manifest.json
+├── README.md
 ├── RotationModels.cs
 ├── RotationOverlay.csproj
-├── RotationOverlayModule.cs
-└── README.md
+└── RotationOverlayModule.cs
 Module Settings
 Rotation Overlay currently provides:
 
@@ -314,9 +315,9 @@ Use $blishData for local Blish HUD paths.
 
 Files in rotations\ are the project/master copies.
 
-During testing, remember to copy JSON changes to the live rotation_overlay folder.
+Copy JSON changes to the live rotation_overlay folder while testing.
 
-The weapon-swap image is embedded into RotationOverlay.dll.
+weapon_swap_button.png is embedded into RotationOverlay.dll; it does not need to be copied separately.
 
 Rotation arrows use > because Unicode arrows did not render reliably in Blish HUD.
 
