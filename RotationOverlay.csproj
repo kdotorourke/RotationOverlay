@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk"> 
+ 
+  <PropertyGroup> 
+    <TargetFramework>net48</TargetFramework> 
+    <OutputType>Library</OutputType> 
+    <AssemblyName>RotationOverlay</AssemblyName> 
+    <RootNamespace>RotationOverlay</RootNamespace> 
+  </PropertyGroup> 
+ 
+  <ItemGroup> 
+    <PackageReference Include="BlishHUD" Version="1.2.0" ExcludeAssets="runtime;contentFiles;analyzers" /> 
+    <PackageReference Include="System.ComponentModel.Composition" Version="6.0.0" /> 
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" /> 
+  </ItemGroup> 
+ 
+  <ItemGroup> 
+    <None Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+    <EmbeddedResource Include="assets\weapon_swap_button.png" />
+  </ItemGroup> 
+ 
+</Project>

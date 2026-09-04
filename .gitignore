@@ -1,0 +1,23 @@
+# Build output
+bin/
+obj/
+
+# Packaged Blish HUD modules
+*.bhm
+*.zip
+
+# IDE / editor files
+.vs/
+.vscode/
+.idea/
+
+# User-specific files
+*.user
+*.suo
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store

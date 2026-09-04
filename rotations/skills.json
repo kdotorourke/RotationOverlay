@@ -1,0 +1,161 @@
+{
+  "1": {
+    "name": "Lively Lute",
+    "key": "Q",
+    "skillId": 76552,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "2": {
+    "name": "Flustering Flute",
+    "key": "E",
+    "skillId": 76746,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "3": {
+    "name": "Deafening Drum",
+    "key": "R",
+    "skillId": 77079,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "4": {
+    "name": "Harmonious Harp",
+    "key": "F",
+    "skillId": 77077,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "5": {
+    "name": "Crescendo",
+    "key": "T",
+    "skillId": 76931,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "6": {
+    "name": "Flying Cutter",
+    "key": "1",
+    "skillId": 62510,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "7": {
+    "name": "Bladecall",
+    "key": "2",
+    "skillId": 62560,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "8": {
+    "name": "Unstable Bladestorm",
+    "key": "3",
+    "skillId": 62607,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "9": {
+    "name": "Illusionary Riposte",
+    "key": "4",
+    "skillId": 10280,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "10": {
+    "name": "Phantasmal Swordsman",
+    "key": "5",
+    "skillId": 10174,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "11": {
+    "name": "Psycut",
+    "key": "1",
+    "skillId": 73154,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "12": {
+    "name": "Mind the Gap",
+    "key": "2",
+    "skillId": 73093,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "13": {
+    "name": "Imaginary Inversion",
+    "key": "3",
+    "skillId": 73152,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "14": {
+    "name": "Phantasmal Lancer",
+    "key": "4",
+    "skillId": 72946,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "15": {
+    "name": "Mental Collapse",
+    "key": "5",
+    "skillId": 72957,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "16": {
+    "name": "Mantra of Recovery",
+    "key": "6",
+    "skillId": 10213,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "17": {
+    "name": "Tale of the Tortured Mastermind",
+    "key": "7",
+    "skillId": 77066,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "18": {
+    "name": "Mantra of Pain",
+    "key": "8",
+    "skillId": 10211,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "19": {
+    "name": "Tale of the Soulkeeper",
+    "key": "9",
+    "skillId": 76850,
+    "assetId": 0,
+    "icon": ""
+  },
+
+  "20": {
+    "name": "Signet of Humility",
+    "key": "0",
+    "skillId": 29519,
+    "assetId": 0,
+    "icon": ""
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Rotation Overlay",
+    "version": "1.1.0",
+    "namespace": "KO.rotationoverlay",
+    "package": "RotationOverlay.dll",
+    "manifest_version": 1,
+    "description": "A customizable Guild Wars 2 rotation overlay rendered from rotation data.",
+    "contributors": [
+      {
+        "name": "KO"
+      }
+    ],
+    "dependencies": {
+      "bh.blishhud": "*"
+    },
+    "directories": [
+      "rotation_overlay"
+    ]
+  }
